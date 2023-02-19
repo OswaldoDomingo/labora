@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios </title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;   
+        }
+
+        /* Creamos el contenedor con display flex*/
+        .contenedor{
+            display: flex;
+        }
+
+        /* Creamos las cajas con dimensiones */
+
+        .caja1, .caja2, .caja3, .caja4{
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            /* Margen para separarlas*/
+            margin: 5px;
+            border-radius: 10%;           
+        }
+
+        /*Asignamos a cada caja diferentes estilos*/
+        .caja1{
+            background-color: rgb(8, 124, 124);
+            /*Se le crea un transitios de 0.5s para que el cambio de color sea poco a poco*/
+            transition: .5s;
+        }
+        .caja2{
+            background-color: rgb(255, 115, 0);
+        }
+        .caja3{
+            background-color: rgb(209, 97, 97);
+        }
+        .caja4{
+            background-color: rgb(57, 134, 6);
+        }
+
+        /*Se le añade que sea de row a column el display flex mediante un hover en la clase de contenedor*/
+        .contenedor:hover{
+            flex-direction: column;
+        }
+
+            /* Se le añade qie cambian las cajas de color en el hover de las cajas*/
+        .caja1:hover{
+            background-color: aquamarine;
+            /*El borde se redondeará más */
+            border-radius: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+
+        <div class="caja1">Caja 1</div>
+        <div class="caja2">Caja 2</div>
+        <div class="caja3">Caja 3</div>
+        <div class="caja4">Caja 4</div>
+    </div>
+    
+</body>
+</html>
