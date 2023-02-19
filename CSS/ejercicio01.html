@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios con Flex</title>
+    <title>Ejercicios con Flex 01</title>
     <style>
         * {
             margin: 0px;
@@ -12,28 +12,36 @@
             font-size: 16px;   
         }
 
+        /* Creamos el contenedor con display flex*/
         .contenedor{
             display: flex;
         }
 
+        /* Creamos las cajas con dimensiones */
+
         .caja1, .caja2, .caja3, .caja4{
             width: 150px;
             height: 150px;
-            
+            text-align: center;
+            /* Margen para separarlas*/
+            margin: 5px;
+            border-radius: 10%;           
         }
 
+        /*Asignamos a cada caja diferentes estilos*/
         .caja1{
-            background-color: aqua;
+            background-color: rgb(8, 124, 124);
         }
         .caja2{
-            background-color: aqua;
+            background-color: rgb(255, 115, 0);
         }
         .caja3{
-            background-color: aqua;
+            background-color: rgb(209, 97, 97);
         }
         .caja4{
-            background-color: aqua;
+            background-color: rgb(57, 134, 6);
         }
+
     </style>
 </head>
 <body>
