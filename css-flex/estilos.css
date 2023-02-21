@@ -1,0 +1,101 @@
+.contenedor{
+    display: flex;
+    background-color: blueviolet;
+    flex-wrap: wrap;
+    font-size: 2em;
+    height: 600px;
+
+    /* flex-direction: column-reverse; */
+    transition: .9s;
+
+    /* PAra distribuir las cajas por igual*/
+    justify-content: space-evenly;
+
+    /* Para distribuir el contenido eje y */
+    align-content:space-evenly;
+
+    /* Alinea las cajas sobre la base del texto de entro de la caja desplazando la caja (item)*/
+    align-items: stretch;
+}
+
+/* 
+    Creando los estilos y los tamaños                                                                                                                                                                                 
+
+*/
+
+.item1, .item2, .item3, .item4, .item5{
+    display: flex;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    background-color: aqua;
+    /* Para posicionar los items en el centro Eje x*/
+    justify-content: center;
+    /* Para posicionar los items en el medio del item Eje y*/
+    align-items: center;
+    /* Duración de la transición para cuando se pase el rató npr encima de la caja*/
+    transition: 1s;
+    /* Redondeo de la caja contenedora */
+    border-radius: 10px;
+}
+/* Cambia de color el foondo*/
+.item1, .item3{
+    background-color: aquamarine;
+}
+.item1:hover, .item3:hover{
+    background-color: rgb(179, 177, 90);
+    border-radius: 25px;
+}
+.item2:hover, .item4:hover{
+    background-color: rgb(179, 90, 137);
+    border-radius: 25px;
+}
+
+/* .caja1{
+    display: flex;
+    background-color: cadetblue;
+    flex-direction: column-reverse;
+} */
+
+.contenedor:hover{
+    /* flex-direction: column; */
+    background-image: linear-gradient(180deg, red, yellow);
+    border-radius: 10px;
+}
+.item5{
+    transition: 2s;
+}
+
+.item1:hover>span{
+    visibility: hidden;
+}
+.item2:hover>span{
+    transform: rotate(.5turn);
+    color:chocolate
+}
+
+.item3:hover{
+    background-image: url("imagenes/leon.jpg") ;
+    background-size: cover;
+}
+
+.item3:hover>span{
+    color: rgb(22, 40, 5);
+    transform: scale(0.5) translate(100%, -300%); 
+}
+.item5:hover{
+    transform: rotate(.5turn);
+    color:rgb(0, 0, 0);
+    visibility: hidden;
+    background-image: url(imagenes/mono.webp);
+    background-size: cover;
+    cursor: none;
+}
+/* .item5:hover{
+     width: 0; 
+     height: 0; 
+     border-left: 150px solid #f0ad4e;
+     border-top: 90px solid transparent;
+     border-bottom: 50px solid transparent;
+
+} */
