@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="cabecera">Adivina el número de 100 a 5000</h1>
+
+    <input type="text" name="numero" id="num">
+
+    <p>Numero: <span id="adivina"></span></p>
+
+    <script>
+        document.getElementById('num').addEventListener('keyup', calcula);
+        let aleatorio = Math.floor(Math.random()*(5000 - 100) +100);
+
+        function calcula(){
+            let tecleado = parseInt(document.getElementById('num').value);
+           
+                let resto = aleatorio - tecleado;
+                
+            if(Number.isNaN(resto)){
+                //Si es NaN borra lo escrito
+                document.getElementById('num').value = "";
+                document.getElementById('adivina').textContent = "";
+
+            } else{
+                //Si es número si que lo escribe
+                let cuentaNumeros = document.getElementById('num').value;
+                if(cuentaNumeros > aleatorio){
+                    document.getElementById('adivina').innerHTML= "Te pasas";
+                } else if (cuentaNumeros < aleatorio){
+                    document.getElementById('adivina').innerHTML= "Te quedas corto";
+                } else if(cuentaNumeros == aleatorio){
+                    document.getElementById('adivina').innerHTML= "Lo has adivinado, es el " + aleatorio;
+                }
+
+                
+                //    document.getElementById('adivina').innerHTML= resto;
+            }
+            
+            if(resto == 0){
+                document.getElementById('cabecera').innerHTML = "Lo lograste!!!!!";
+                document.getElementById('cabecera').style.color = 'red';
+            } else {
+                document.getElementById('cabecera').innerHTML = "Adivina el número de 100 a 5000";
+                document.getElementById('cabecera').style.color = '#000';
+            }
+        }
+
+    </script>
+
+    
+</body>
+</html>
