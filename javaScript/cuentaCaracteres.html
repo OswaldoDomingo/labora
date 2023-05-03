@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar caracteres</title>
+</head>
+<body>
+    <h2>Cuenta caracteres</h2>
+    <p>En un input text se va a descontar los caracteres que se escriban y se van a contar 
+        en un textro debajo del campo el input
+    </p>
+        <input type="text" name="texto" id="texto" maxlength="140" size="140">
+        <!-- Donde saldrá los que nos quedan -->
+        <p id="parrafo" class="parrafo"></p>
+
+        <script>
+
+            //Devuelve la referencia del id
+            let getId = document.getElementById('texto');
+            //console.log(getId);
+            // <input type="text" name="texto" id="texto" maxlength="140" size="140">
+
+            // Con addEventListener es un auditor de eventos, escuchacrá el elemento keyup (levantar la tecla y entonces llamará a la función presiona() en este caso no es necesario los paréntesis)
+            getId.addEventListener('keyup', presiona);
+
+            //let texto = document.getElementById('texto');
+            let texto = document.querySelector('.texto');
+            //console.log(texto)
+
+            function presiona(){
+                //recoger el número de caracteres que se estan escribiendo 
+                let cantidad = document.getElementById('texto').value.length;
+                //Se calcula la resta de los 140 de límite con la cantidad de caracteres que se están escribiendo en el input
+                let total = 140-cantidad;
+                //Escribimos en la etiqueta <p> los caracteres que nos quedan por escribir
+                document.getElementById('parrafo').textContent="Puedes escribir aún " +total + " caracteres.";
+
+            }
+
+        </script>
+
+</body>
+</html>
