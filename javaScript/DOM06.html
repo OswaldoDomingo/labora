@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar alumnado</title>
+    <style>
+        .alumnado {
+            display: flex;
+        }
+
+        .nombreAlumno,
+        .edadAlumno {
+            margin: 5px;
+        }
+        input{
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM</h1>
+    <h2>Crear input text</h2>
+    <p>En este ejercicio se crean inputs text para introducir los nombres de alumnos y los años que tienen de 14 hacia
+        adelante</p>
+    <p>Cuando se hace el envío se borran los input</p>
+    <p>Se usa el método get para que se vea lo que se envia por la barra del navegador.</p>
+
+    <form>
+        <input type="button" value="Agregar nuevo alumno" id="agregar">
+        <input type="submit" value="Enviar" id="enviar">
+        <div class="alumnado">
+            <div class="nombreAlumno" id="nombreAlumnado">
+                <p>Nombre de alumno:</p>
+                <input type="text" name="" id="nombre" style=" height: 20px;">
+            </div>
+            <div class="edadAlumno" id="edadAlumnado">
+                <p>Edad de alumno:</p>
+                <input type="number" name="" id="edad" min="14" style="width: 30%; height: 20px;">
+            </div>
+        </div>
+    </form>
+    <script>
+        document.getElementById('agregar').addEventListener('click', nuevoAlumno);
+        let variable = 0;
+
+        function nuevoAlumno() {
+            //Se crea un br para el salto de líneas
+            let saltoLinea = document.createElement('br');
+            //Este br se añade al div nombreAlumnado
+            document.getElementById('nombreAlumnado').appendChild(saltoLinea);
+            //Crear el input
+            let nuevoInputNombre = document.createElement('input');
+            //Añadiremos el nuevo input en el id nombreAlumno
+            document.getElementById('nombreAlumnado').appendChild(nuevoInputNombre);
+            //Añadimos los atributos del input, name y text
+            nuevoInputNombre.setAttribute('type', 'text');
+            nuevoInputNombre.setAttribute('name', 'nombre');
+            nuevoInputNombre.style.height='20px';
+
+            // *** crear los input paras la edad ***
+            //Crewamos un br para que haga un salto de línea y se quede debajo del que esté
+            //Este br se añade al div de la edad del alumnado
+            let saltoLinea2 = document.createElement('br');
+            document.getElementById('edadAlumnado').appendChild(saltoLinea2);
+
+            //Se crea el elemento input number 
+            let nuevoInputEdad = document.createElement('input');
+            //Ponemos el input para la edad en el div edadAlumnado
+            document.getElementById('edadAlumnado').appendChild(nuevoInputEdad);
+            //Añadimos los atributos del input para la edad
+            //min="14" style="width: 30%; height: 20px;">
+            nuevoInputEdad.setAttribute('type', 'number');
+            nuevoInputEdad.setAttribute('min', '14');
+            nuevoInputEdad.style.height='20px';
+            nuevoInputEdad.style.width='30%'
+        }
+
+    </script>
+
+</body>
+
+</html>
