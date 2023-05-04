@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Ejemplo 1.4</title>
+</head>
+<style type="text/css">
+.myDiv{
+	background-color: red;
+}	
+
+.clase1{
+	background-color: green;
+}
+</style>
+<body>
+<h2>Crear elementos a partir de la cantidad que se recoge de un window prompt</h2>
+<input type="button" id="pulsa" value="Púlsame" >
+<div id="padre" class="myDiv"></div>
+<script>
+    document.getElementById('pulsa').addEventListener('click', ejecutar);
+    function ejecutar(){
+        let cantidad = parseInt(window.prompt("Cuantos elementos quieres crear"));
+        
+        // repetirlo tantas veces como se haya pedido
+        for(let i=0; i < cantidad; i++){
+            // Crear el elemento
+            let elemento = document.createElement('div');
+            //el elemento se va a poner como hijo del id=padre, quedan dentro del padre
+            //se coge el elemento con id padre y se colocasn en él 
+            let inner=document.getElementById("padre").appendChild(elemento);
+            //Se escribe dentro del div creado, se puede usar textContent.
+            inner.innerHTML="Div número: "+i;
+            //Se le cambia el atributo clase de forma opcional
+            inner.setAttribute("class","clase1");
+        }
+
+    }
+    
+</script>
+<textarea name="" id="" cols="50" rows="6" style="background-color: black; color:aliceblue; margin: 20px 5px;">
+    Resultado del código generado al introducir 2 
+    <div id="padre" class="myDiv">
+        <div class="clase1">Div número: 0</div>
+        <div class="clase1">Div número: 1</div>
+    </div>
+</textarea>
+
+
+
+                            
+</body>
+</html>
