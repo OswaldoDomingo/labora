@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .caja0 {
+            background-color: silver;
+        }
+        .caja1 {
+            background-color: red;
+        }
+
+        .caja2 {
+            background-color: orange;
+        }
+
+        .caja3 {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Se crean los div a partir de la cantidad que se reciba del prompt</h2>
+    <p>Los impares tendrán el fondo rojo, los pares naranja y los múltiplos de tres verde</p>
+    <!-- <input type="button" value="Cantidad" id="cuantos"> -->
+
+    <div id="padre"></div>
+    <script>
+       // document.getElementById('cuantos').addEventListener('click', pulsa);
+       let cantidad = parseInt(window.prompt("Cantidad de elementos a poner."));
+
+      //  function pulsa() {
+
+            for (let i = 1; i <= cantidad; i++) {
+                //Se crea el elemento div
+                let elementoDIV = document.createElement('div');
+                 //el elemento div creado se va a poner como hijo de el div con id padre
+                 let inner = document.getElementById('padre').appendChild(elementoDIV);
+                    //Se le inserta texto al div creado
+                    inner.innerHTML = "DIV número: " + i;
+
+                //Se le cambia la clase según se indica impar, par o múltiplo de tres
+                if(i % 3 == 0 && i % 2 == 0){
+                    inner.setAttribute('class', 'caja0');
+                }
+                else if (i % 3 == 0) {
+                    inner.setAttribute('class', 'caja3');
+                } else if (i % 2 == 0) {
+                    inner.setAttribute('class', 'caja2');
+                } else {
+                    inner.setAttribute('class', 'caja1');
+                }
+            }
+    //    }
+    </script>
+</body>
+
+</html>
