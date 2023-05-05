@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="elementoDiv1" class="clase1"></div>
+    <div id="elementoDiv2" class="clase1"></div>
+    <div id="elementoDiv3" class="clase1"></div>
+
+    <script>
+        // Se guarda en una variable el elemento con id= elementoDiv1
+        const divUno = document.getElementById('elementoDiv1');
+        console.log(divUno); //-> <div id="elementoDiv1" class="clase1" name="nombre1"></div>
+        
+        //recogemos en un array todos los DIV que haya
+        const divTodos = document.getElementsByTagName('div');
+        console.log(divTodos);
+        /*
+        [div#elementoDiv1.clase1, div#elementoDiv2.clase1, div#elementoDiv3.clase1, elementoDiv1: div#elementoDiv1.clase1, nombre1: div#elementoDiv1.clase1, elementoDiv2: div#elementoDiv2.clase1, elementoDiv3: div#elementoDiv3.clase1]
+        */
+       //vemos que hay el segundo elemento del array
+        console.log(divTodos[1]);
+        //<div id="elementoDiv2" class="clase1" name="nombre1"></div>
+
+        //recorrer array
+        for (let i = 0; i < divTodos.length; i++) {
+            console.log(divTodos[i]);
+        }
+        //  <div id="elementoDiv1" class="clase1" name="nombre1"></div>
+        //  <div id="elementoDiv2" class="clase1" name="nombre1"></div>
+        //  <div id="elementoDiv3" class="clase1" name="nombre1"></div>
+
+        //Modificar el contenido dentro del div también se puede usas innerHTML
+        divTodos[0].textContent = "Hola";
+        divTodos[1].textContent = "recorro";
+        divTodos[2].textContent = "el array";
+        /* 
+        Lo que sale ->  el HTML
+        Hola        -> <div id="elementoDiv1" class="clase1" name="nombre1">Hola</div>
+        recorro     -> <div id="elementoDiv2" class="clase1" name="nombre1">recorro</div>
+        el array    -> <div id="elementoDiv3" class="clase1" name="nombre1">el array</div>
+        */
+
+        //Cambiamos el color del segundo div a color rojo
+        divTodos[1].style.color='red';
+
+        //Añadimos un atributo al tercere DIV le ponemos 'nombre' y de valor 'nombre3'
+        divTodos[2].setAttribute('name', 'nombre3'); //<div id="elementoDiv3" class="clase1" name="nombre3">el array</div>
+        
+    </script>
+</body>
+
+</html>
