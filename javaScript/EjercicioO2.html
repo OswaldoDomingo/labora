@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios while</title>
+</head>
+<body>
+    <h1>Ejercicios while</h1>
+    <pre>
+        while(condicion){
+            sentencia
+        }
+    </pre>
+    <br>
+    <p>Ejercicio:</p>
+    <p>Escribe un número aleatorio del 0 al 100 y adivina cual es, hasta que no lo adivines no sales del bucle, cuando no lo aciertes saldrá una ayuda diciendo si te has pasado o te has quedado corto.</p>
+    <p>Al juego accedes haciendo click en el botón con valor Juega.</p>
+    <input type="button" value="Juega" id="juego">
+    <script>
+        document.getElementById('juego').addEventListener('click', jugar);
+        function jugar(){
+                let aleatorio = Math.floor(Math.random()*100); //Número aleatorio
+                let numeroUsuario = parseInt(window.prompt("Escribe un número del 0 al 100"));
+                
+                while(numeroUsuario != aleatorio){
+                    let posiocion="";
+                    if(numeroUsuario > aleatorio){
+                        posiocion = "Te has pasado";
+                    } else if(numeroUsuario < aleatorio){
+                        posiocion = "Te has quedado corto";
+                    }
+                    numeroUsuario = parseInt(window.prompt(posiocion + " intentalo de nuevo."));    
+                }
+                document.write(`<h2>Acertaste, el número era el ${aleatorio}</h1>`)
+            }
+    </script>
+</body>
+</html>
