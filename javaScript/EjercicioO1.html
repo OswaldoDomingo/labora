@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio for</title>
+</head>
+<body>
+    <h1>Escribir varios encabezados</h1>
+    <script>
+        encabezados();
+
+        function encabezados(){
+            let cantidad = parseInt(window.prompt('Escribe la cantidad'));
+            let tipo = window.prompt('Escribe el tipo;\nh1\nh2\nh3');
+
+            for(let i=0; i < cantidad; i++){
+                document.write('<'+tipo+'>'+'Encabezado '+(i+1)+'</'+tipo+'>');
+            }
+        }
+    </script>
+</body>
+</html>
