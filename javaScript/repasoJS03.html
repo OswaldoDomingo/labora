@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso 3</title>
+</head>
+<body>
+    <h1>Esto es un <i>h1</i></h1>
+    <input type="button" value="Pulsa y verás">
+
+    <script>
+        //cogemos el h1
+        let h1 = document.getElementsByTagName('h1');
+        //cogemos el botón
+        let boton = document.getElementsByTagName('input');
+        //creamos el evento del botón click y llamamos a la función
+        boton[0].addEventListener('click', cambio);
+        //creamos la función para cambiar el color del h1 
+        function cambio(){
+            h1[0].style.color="blue";
+        }
+        //creamos un evento que al pasar el ratón por el h1 llame a la función
+        h1[0].addEventListener('mouseover', vuelta);
+        //creamos la función que cambia a color negro el texto
+        function vuelta(){
+            h1[0].style.color="black";
+        }
+    </script>
+    
+</body>
+</html>

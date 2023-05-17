@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+        //Crea los botones 
+        let boton = document.createElement('input');
+        let boton2 = document.createElement('button');
+        let boton3 = document.createElement('button');
+        let br = document.createElement('br'); //Salto de línea
+        let br2 = document.createElement('br'); //Salto de línea
+
+        //Atributos del botón 
+        boton.setAttribute("type", "button");
+        boton.setAttribute("name", "boton1");
+        boton.setAttribute("value", "Pulsa el botón 1");
+        boton.addEventListener('click', cambiaBoton1);
+        boton.style.margin='10px';
+        //Atributos del botón2
+        boton2.addEventListener('click', cambiaBoton2);
+        boton2.setAttribute("name", "boton2");
+        boton2.textContent="Pulsa el botón 2";
+        boton2.style.margin='10px';
+        //Atributos del botón3
+        boton3.addEventListener('click', reinicial);
+        boton3.setAttribute("name", "boton3");
+        boton3.textContent="Reinicia";
+        boton3.style.margin='10px';
+
+
+        //pongo en el body los dos botones y el br en el body
+        document.body.appendChild(boton);//Pongo el botón 1  en el body
+        document.body.appendChild(br);//Pongo el salto de línea  en el body
+        document.body.appendChild(boton2);//Pongo el botón 2  en el body
+        document.body.appendChild(br2);//Pongo el salto de línea  en el body
+        document.body.appendChild(boton3);//Pongo el botón 3  en el body
+
+        //Función que cambia el valor del input
+        function cambiaBoton1(){
+            boton.setAttribute('value', 'Botón 1 pulsado');
+        }
+        //Función que cambia el texto del button2
+        function cambiaBoton2(){
+            boton2.textContent='Botón 2 pulsado';
+        }
+        //Función que cambia el texto del button3
+        function reinicial(){
+            location.reload();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script>
+        //Creamos las etiquetas
+        let h1 = document.createElement('h1');
+        let span1 = document.createElement('span');
+        let span2 = document.createElement('span');
+        //Atributo para h1
+        h1.setAttribute('id', 'titulo');
+        //Texto del h1
+        h1.textContent="Capítulo 1"
+        //Crea 3 párrafos dentro del span
+        let parrafo1 = document.createElement('p');
+        let parrafo2 = document.createElement('p');
+        let parrafo3 = document.createElement('p');
+        //let span = document.getElementsByTagName('span');
+        //Rellenamos los párrafos 
+        parrafo1.textContent="Línea primera del primer párrafo";
+        parrafo2.textContent="Línea segunda del segundo párrafo";
+        parrafo3.textContent="Línea tercera del tercer párrafo";
+        
+        //Colocamos el h1 y los span en el body
+        document.body.appendChild(h1);//En el body pon el h1
+        document.body.appendChild(span1);//en el body pon el span1
+        document.body.appendChild(span2);//en el body pon el span2
+        //Colocamos los p en los span
+        span1.appendChild(parrafo1);//En el sppan1 pon parrafo1
+        span2.appendChild(parrafo2);//En el sppan2 pon parrafo2
+        span1.appendChild(parrafo3);//En el sppan1 pon parrafo3
+
+
+    </script>
+</body>
+</html>

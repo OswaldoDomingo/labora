@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando el this</title>
+    <style>
+        h2{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <!-- al h1 le ponemos un evento en línea onclick que llama a la función y le pasa el parámetro this que es la etiqueta entera -->
+    <h1 onclick="cambioH1(this)">Cambia este texto</h1>
+    <h2 class="cabecera2">Este es el h2 primero</h2>
+    <br>
+    <h2 class="cabecera2">Este es el h2 segundo</h2>
+    <br>
+    <h2 class="cabecera2">Este es el otro h2</h2>
+    <script>
+        //creamos la función que recoge un valor (this) y le cambia el texto, el color, el tamaño de la fuente y muestra por consola el valor de la variable 
+        function cambioH1(e){
+            e.textContent="Texto cambiado.";
+            e.style.color="red";
+            e.style.fontSize="100px";
+            console.log(e);
+        }
+
+        //Esto no es del curso de Certificado
+        //cogemos el valor h2 por una variable y uso el querySelector('h2') este coge el primer valor h2 que encuentra   
+        let h2 = document.querySelector('h2');
+        //pintamos por consola el valor de la variable h2
+        console.log(h2);
+        //creamos un evento click que llama a la función
+        h2.addEventListener('click', cambioh2);
+        //creamos un evento doubleclick que llama a la función
+        //h2.addEventListener('doubleclick', cambio2h2);
+        //creamos un evento mouseover que llama a la función
+        h2.addEventListener('mouseover', h2Rojo);
+        //creamos un evento mouseout que llama a la función
+        h2.addEventListener('mouseout', h2Negro);
+
+        //función que cambia el color y escribe un texto nuevo en h2
+        function cambio2h2(){
+           h2.style.color="green";
+           h2.innerHTML="<b>NO</b> me pulses dos veces";     
+        }
+        //función que cambia el color y escribe un texto nuevo en h2
+        function cambioh2(){
+            h2.innerHTML="<b>NO</b> me pulses más veces";
+            h2.style.color="green";
+        }
+        //función que cambia el color y escribe un texto nuevo en h2
+        function h2Rojo(){
+            h2.style.color="red";
+            h2.innerHTML="<b>NO</b> me pases el ratón por encima más veces";
+        }
+        //función que cambia el color y escribe un texto nuevo en h2
+        function h2Negro(){
+            h2.style.color="black";
+            h2.innerHTML="<b>YA</b> saliste de encima de mi";
+        }
+        
+    </script>
+</body>
+</html>

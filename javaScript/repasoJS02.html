@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso</title>
+</head>
+
+<body>
+    <h1>Cambia el contenido del DIV cuando me pulses</h1>
+    <div>Este es el DIV</div>
+    <button>Este es un botón que cambiará el mundo</button>
+
+    <script>
+        //coger h1 
+        const h1 = document.getElementsByTagName('h1')[0];
+        //crear un evento desde 
+        h1.addEventListener('mouseover', cambiaDiv);
+        //coger el div 
+        const div = document.getElementsByTagName('div')[0];
+        //crear la función que cambiará el texto al div
+        function cambiaDiv() {
+            div.textContent = "Texto cambiado.";
+
+        }
+        //coger el boton 
+        const boton = document.getElementsByTagName('button')[0];
+        //crear el evento en el botón, click que llamará a la función
+        boton.addEventListener('click', boom);
+        //la función cambia el h1 de color, el fondo
+        //al div le cambia el texto
+        //esconde el botón 
+        function boom(){
+            h1.style.color="yellow";
+            h1.style.backgroundColor="red";
+            div.innerHTML="Al final no fué para tanto... <b>>:\\</b>";
+            boton.style.display="none"; 
+        }
+
+    </script>
+</body>
+
+</html>
